@@ -1,0 +1,44 @@
+README
+
+SVM+HOG
+Contains the files pertaining to SVM+HOG algorithm
+
+train_svm.py - run this file if you want to train your own svm detector
+data/ - has the dataset (vehicles and non-vehicles - To be downloaded from link provided in downloadables)
+predict_svm.py - run this if you want to predict bounding boxes for a video
+utils.py - contains helper files to read in images, extract features, etc.
+bbox.py - contains helper files for bounding box visualizations like drawing, nms, etc.
+weights/ -contains the weight file
+
+To train a model run:
+python3 train.py data_directory
+
+where data_directory is where the dataset is present(eg: data/). The dataset must be organized as vehicles and non-vehicles.
+
+eg: python3 train_svm.py data/ 
+
+
+To predict bounding boxes for a video run:
+python3 predict_svm.py path_to_video path_to_weights
+
+where path_to_video is the path to the video inclusive of the video name and path to weights is the path weights inclusive of weights file name
+
+eg: python3 predict_svm.py project_video.mp4 weights/weights.p 
+
+
+
+YOLO
+Contains the files pertaining to YOLO algorithm
+
+layer.py - contains helper files that constitute the building blocks of the yolo architecture.
+model.py - contains the model class (small_yolo) and a function to  build the model.
+weights/ - contains trained weights for the model (Please download from link provided in Downloadables files and place in weights folder)
+predict_yolo.py - run this if you want to predict bounding boxes for a video
+
+To predict bounding boxes for a video run:
+python3 predict_yolo.py path_to_video path_to_weights
+
+where path_to_video is the path to the video inclusive of the video name and path to weights is the path weights inclusive of weights file name
+
+eg: python3 predict_yolo.py project_video.mp4 weights/YOLO_small.ckpt
+
